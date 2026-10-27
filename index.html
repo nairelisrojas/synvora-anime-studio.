@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080611">
+<meta name="description" content="SYNVORA ANIME STUDIO. Animes que tocam. Histórias que unem.">
+<title>SYNVORA ANIME STUDIO</title>
+
+<style>
+:root {
+  --pink: #FF43CF;
+  --purple: #853BFF;
+  --lilac: #C6A1FF;
+  --black: #080611;
+  --panel: #120d20;
+  --white: #f8f4ff;
+  --muted: #c2b7d2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  width: min(1100px, 91%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #080611ed;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #c6a1ff2b;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  min-height: 76px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--purple);
+  border-radius: 13px;
+  color: var(--pink);
+  font-size: 24px;
+  background: #853bff24;
+}
+
+.brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--lilac);
+}
+
+nav {
+  display: flex;
+  gap: 19px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+nav a:hover {
+  color: var(--pink);
+}
+
+.hero {
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 30%, #853bff40, transparent 35%),
+    radial-gradient(ellipse at 15% 85%, #ff43cf20, transparent 35%);
+}
+
+.hero-content {
+  padding: 90px 0;
+  max-width: 760px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--lilac);
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(46px, 8vw, 88px);
+  line-height: 1;
+  margin: 18px 0;
+  letter-spacing: -3px;
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    var(--pink),
+    var(--lilac),
+    var(--purple)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  font-size: 19px;
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.primary {
+  background: linear-gradient(
+    100deg,
+    var(--pink),
+    var(--lilac)
+  );
+  color: #16091d;
+}
+
+.secondary {
+  border: 1px solid var(--purple);
+  background: #853bff18;
+}
+
+section {
+  padding: 78px 0;
+  scroll-margin-top: 85px;
+}
+
+.heading {
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.heading h2 {
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  margin: 8px 0;
+}
+
+.heading p,
+.panel p,
+.card p {
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+}
+
+.panel,
+.card {
+  border: 1px solid #c6a1ff2b;
+  border-radius: 22px;
+  padding: 26px;
+  background: linear-gradient(
+    145deg,
+    #120d20,
+    #0c0816
+  );
+}
+
+.quote {
+  font-size: 24px;
+  color: var(--pink);
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.mini {
+  padding: 17px;
+  border: 1px solid #853bff45;
+  border-radius: 16px;
+  background: #853bff16;
+  margin-bottom: 12px;
+}
+
+.mini strong {
+  display: block;
+  color: var(--lilac);
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card h3 {
+  color: var(--lilac);
+  margin-bottom: 8px;
+}
+
+.symbol {
+  font-size: 27px;
+  color: var(--pink);
+  margin-bottom: 8px;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.swatch {
+  overflow: hidden;
+  border: 1px solid #ffffff20;
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.color {
+  height: 100px;
+}
+
+.swatch-info {
+  padding: 13px;
+}
+
+.swatch code {
+  color: var(--muted);
+}
+
+.swatch p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.type {
+  border-left: 3px solid var(--pink);
+  padding: 8px 0 8px 15px;
+}
+
+.type span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  border: 1px solid #853bff55;
+  border-radius: 25px;
+  padding: clamp(23px, 5vw, 45px);
+  background:
+    radial-gradient(ellipse at 90% 20%, #853bff30, transparent 45%),
+    var(--panel);
+}
+
+.contact h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.15;
+  margin: 10px 0;
+}
+
+.contact p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.contact-row {
+  padding: 14px 16px;
+  background: #080611aa;
+  border: 1px solid #c6a1ff25;
+  border-radius: 13px;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-row span {
+  display: block;
+  color: var(--lilac);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contact-row strong {
+  font-size: 15px;
+}
+
+footer {
+  border-top: 1px solid #c6a1ff25;
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--lilac);
+}
+
+@media (max-width: 740px) {
+  .nav {
+    padding: 12px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 10px 15px;
+  }
+
+  .grid2,
+  .grid3,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .palette {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .types {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 58px 0;
+  }
+
+  .hero {
+    min-height: 550px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">
+      <span class="mark">S✦</span>
+      <span>
+        SYNVORA
+        <small>ANIME STUDIO</small>
+      </span>
+    </a>
+
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#conceito">Conceito</a>
+      <a href="#identidade">Identidade visual</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-content">
+    <div class="eyebrow">
+      Um universo de histórias começa aqui
+    </div>
+
+    <h1>
+      <span class="gradient">SYNVORA</span><br>
+      ANIME STUDIO
+    </h1>
+
+    <p style="color:var(--white);font-size:22px;font-weight:bold">
+      Animes que tocam. Histórias que unem.
+    </p>
+
+    <p>
+      Transformamos criatividade e imaginação em histórias
+      envolventes, personagens marcantes e universos extraordinários.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#sobre">
+        Conheça a SYNVORA
+      </a>
+
+      <a class="btn secondary" href="#contato">
+        Entre em contato
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="heading">
+      <div class="eyebrow">01 · Apresentação</div>
+      <h2>
+        Mais que animação.<br>
+        <span class="gradient">Um universo de emoções.</span>
+      </h2>
+      <p>
+        Conheça a ideia por trás da marca e o que move cada história.
+      </p>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <div class="quote">
+          “A SYNVORA transforma sonhos em histórias através do anime.”
+        </div>
+
+        <p>
+          A SYNVORA é um estúdio de animes que transforma criatividade
+          e imaginação em histórias e personagens únicos. Nossa identidade
+          transmite inovação, emoção e conexão com os fãs.
+        </p>
+
+        <p>
+          Cada ideia é uma porta para um novo mundo. Nosso objetivo é
+          criar narrativas que despertem sentimentos, alimentem a imaginação
+          e aproximem pessoas por meio de personagens inesquecíveis.
+        </p>
+      </div>
+
+      <div>
+        <div class="mini">
+          <strong>✦ Criatividade</strong>
+          Ideias originais que ganham vida.
+        </div>
+
+        <div class="mini">
+          <strong>✧ Emoção</strong>
+          Histórias que deixam marcas.
+        </div>
+
+        <div class="mini">
+          <strong>⌁ Conexão</strong>
+          Universos que aproximam fãs.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="conceito">
+  <div class="wrap">
+    <div class="heading">
+      <div class="eyebrow">02 · Conceito da marca</div>
+      <h2>
+        Uma identidade com <span class="gradient">propósito.</span>
+      </h2>
+      <p>
+        A SYNVORA representa a união entre criatividade, imaginação
+        e emoção por meio do universo dos animes.
+      </p>
+    </div>
+
+    <div class="grid3">
+      <article class="card">
+        <div class="symbol">◎</div>
+        <h3>Missão</h3>
+        <p>
+          Criar histórias envolventes e personagens marcantes que
+          despertem emoções e inspirem a imaginação.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="symbol">✦</div>
+        <h3>Visão</h3>
+        <p>
+          Tornar-se uma marca reconhecida pela originalidade
+          e qualidade das suas produções.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="symbol">◇</div>
+        <h3>Valores</h3>
+        <p>
+          Criatividade, inovação, autenticidade e conexão com os fãs.
+        </p>
+      </article>
+    </div>
+
+    <div class="panel" style="margin-top:17px">
+      <strong style="color:var(--pink)">Essência da marca:</strong>
+      transformar ideias em universos extraordinários.
+    </div>
+  </div>
+</section>
+
+<section id="identidade">
+  <div class="wrap">
+    <div class="heading">
+      <div class="eyebrow">03 · Identidade visual</div>
+      <h2>
+        Neon, fantasia e <span class="gradient">personalidade.</span>
+      </h2>
+      <p>
+        Uma estética futurista que combina formas marcantes,
+        brilho neon e um toque de mistério.
+      </p>
+    </div>
+
+    <div class="panel" style="margin-bottom:25px">
+      <h3 style="color:var(--lilac);margin-top:0">Logotipo</h3>
+      <p>
+        O conceito do logotipo utiliza formas futuristas, estrelas e
+        órbitas para representar imaginação, movimento e novos universos.
+        O símbolo “S” pode funcionar como ícone independente da marca.
+        O fundo escuro destaca as cores luminosas.
+      </p>
+    </div>
+
+    <h3>Paleta oficial</h3>
+
+    <div class="palette">
+      <div class="swatch">
+        <div class="color" style="background:#FF43CF"></div>
+        <div class="swatch-info">
+          <b>Rosa neon</b><br>
+          <code>#FF43CF</code>
+          <p>Energia e criatividade</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="color" style="background:#853BFF"></div>
+        <div class="swatch-info">
+          <b>Roxo</b><br>
+          <code>#853BFF</code>
+          <p>Imaginação e inovação</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="color" style="background:#C6A1FF"></div>
+        <div class="swatch-info">
+          <b>Lilás</b><br>
+          <code>#C6A1FF</code>
+          <p>Fantasia e delicadeza</p>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="color"
+             style="background:#080611;border-bottom:1px solid #30283d">
+        </div>
+        <div class="swatch-info">
+          <b>Preto</b><br>
+          <code>#080611</code>
+          <p>Elegância e mistério</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:34px">Tipografia da marca</h3>
+
+    <div class="types">
+      <div class="type">
+        <b style="letter-spacing:1px">ORBITRON BOLD</b>
+        <span>Títulos e nome da marca</span>
+      </div>
+
+      <div class="type">
+        <b>Montserrat SemiBold</b>
+        <span>Subtítulos e destaques</span>
+      </div>
+
+      <div class="type">
+        <b style="font-weight:400">Poppins Regular</b>
+        <span>Textos e informações</span>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:25px">
+      <h3 style="color:var(--lilac);margin-top:0">
+        Estilo, aplicações e utilização
+      </h3>
+
+      <p>
+        Use fundos escuros, contrastes neon, estrelas, órbitas e formas
+        geométricas futuristas. A identidade pode aparecer em cartões
+        de visita, redes sociais, capas, materiais promocionais e
+        apresentações do estúdio.
+      </p>
+
+      <p>
+        Para manter a consistência, preserve as cores oficiais,
+        a legibilidade do logotipo e o espaço ao redor da marca.
+        Evite distorcer o símbolo ou adicionar cores que prejudiquem
+        a identidade.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">04 · Contato</div>
+
+        <h2>
+          Vamos dar vida a
+          <span class="gradient">novas histórias?</span>
+        </h2>
+
+        <p>
+          Para conversas, ideias e oportunidades criativas,
+          entre em contato com a SYNVORA ANIME STUDIO.
+        </p>
+
+        <a class="btn primary" href="mailto:Synvora@hotmail.com">
+          Enviar e-mail ↗
+        </a>
+      </div>
+
+      <div>
+        <div class="contact-row">
+          <span>Direção</span>
+          <strong>Direção Criativa</strong>
+        </div>
+
+        <div class="contact-row">
+          <span>E-mail</span>
+          <strong>
+            <a href="mailto:Synvora@hotmail.com">
+              Synvora@hotmail.com
+            </a>
+          </strong>
+        </div>
+
+        <div class="contact-row">
+          <span>Instagram</span>
+          <strong>
+            <a href="https://www.instagram.com/Synvora/"
+               target="_blank" rel="noopener noreferrer">
+              @Synvora ↗
+            </a>
+          </strong>
+        </div>
+
+        <div class="contact-row">
+          <span>Site</span>
+          <strong>Você já está nele!</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>
+      © <span id="year"></span> SYNVORA ANIME STUDIO.
+      Todos os direitos reservados.
+    </span>
+
+    <span>Animes que tocam. Histórias que unem. ✦</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
